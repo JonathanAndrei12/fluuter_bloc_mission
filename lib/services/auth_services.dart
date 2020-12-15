@@ -3,11 +3,13 @@ part of 'services.dart';
 class AuthServices {
   static FirebaseAuth auth = FirebaseAuth.instance;
 
-  static Future<String> signUp(String email, String password, String nama) async {
+  static Future<String> signUp(
+      String email, String password, String nama) async {
     await Firebase.initializeApp();
     String msg = "";
     try {
-      UserCredential result = await auth.createUserWithEmailAndPassword(email: email, password: password);
+      UserCredential result = await auth.createUserWithEmailAndPassword(
+          email: email, password: password);
       Users users = result.user.convertToUser(name: nama);
       auth.signOut();
       await UserServices.updateUser(users);

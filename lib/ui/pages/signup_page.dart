@@ -65,7 +65,7 @@ class _SignUpPagesState extends State<SignUpPages> {
                         label: Text("Sign Up"),
                         textColor: Colors.white,
                         color: Colors.blue,
-                        onPressed: () async{
+                        onPressed: () async {
                           if (ctrlName.text == "" ||
                               ctrlEmail.text == "" ||
                               ctrlPassword.text == "") {
@@ -78,8 +78,11 @@ class _SignUpPagesState extends State<SignUpPages> {
                               fontSize: 16,
                             );
                           } else {
-                            String result = await AuthServices.signUp(ctrlEmail.text, ctrlPassword.text, ctrlName.text);
-                            if(result=='success'){
+                            String result = await AuthServices.signUp(
+                                ctrlEmail.text,
+                                ctrlPassword.text,
+                                ctrlName.text);
+                            if (result == 'success') {
                               Fluttertoast.showToast(
                                 msg: "Success",
                                 toastLength: Toast.LENGTH_SHORT,
@@ -88,8 +91,8 @@ class _SignUpPagesState extends State<SignUpPages> {
                                 textColor: Colors.white,
                                 fontSize: 16,
                               );
-                            }else{
-                               Fluttertoast.showToast(
+                            } else {
+                              Fluttertoast.showToast(
                                 msg: result,
                                 toastLength: Toast.LENGTH_SHORT,
                                 gravity: ToastGravity.BOTTOM,
@@ -98,7 +101,6 @@ class _SignUpPagesState extends State<SignUpPages> {
                                 fontSize: 16,
                               );
                             }
-                            
                           }
                         }),
                     SizedBox(
@@ -106,16 +108,15 @@ class _SignUpPagesState extends State<SignUpPages> {
                     ),
                     RichText(
                       text: TextSpan(
-                        text: "Already registered? Sign in.",
-                        style: TextStyle(color: Colors.blue),
-                        recognizer: TapGestureRecognizer()
-                        ..onTap = (){
-                          Navigator.pushReplacement(context, 
-                            MaterialPageRoute(builder: (context){
-                              return MyApp();
-                            }));
-                        }
-                      ),
+                          text: "Already registered? Sign in.",
+                          style: TextStyle(color: Colors.blue),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.pushReplacement(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return MyApp();
+                              }));
+                            }),
                     )
                   ],
                 )
