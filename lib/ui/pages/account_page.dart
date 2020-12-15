@@ -29,13 +29,13 @@ class _AccountPageState extends State<AccountPage> {
                       child: Container(
                         margin: EdgeInsets.all(20),
                         child: Column(
-                          CircleAvatar(
-                            backgroundColor: Colors.white,
-                            // backgroundImage: NetworkImage(
-                            //   // user.image,
-                            //   scale: 60,
-                            // ),
-                          ),
+                          // CircleAvatar(
+                          //   backgroundColor: Colors.white,
+                          //   // backgroundImage: NetworkImage(
+                          //   //   // user.image,
+                          //   //   scale: 60,
+                          //   // ),
+                          // ),
                         ),
                       ),
                     )
